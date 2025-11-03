@@ -61,6 +61,10 @@ Ionic ships with a useful development server which detects changes and transpile
 ```bash
 export NODE_OPTIONS=--openssl-legacy-provider
 ionic serve
+
+nvm use 16
+
+npx ng serve --ssl true --ssl-cert ./localhost.pem --ssl-key ./localhost-key.pem
 ```
 
 > _tip_: Do not use **ionic serve** in production. Instead, build Ionic into a build artifact for your desired platforms.

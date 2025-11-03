@@ -20,7 +20,7 @@ export interface Drink {
 export class DrinksService {
 
   url = environment.apiServerUrl;
-
+  
   public items: {[key: number]: Drink} = {};
   // = {
   //                             1: {
@@ -91,6 +91,7 @@ export class DrinksService {
   }
 
   getDrinks() {
+  console.log("url", this.url)
     if (this.auth.can('get:drinks-detail')) {
       this.http.get(this.url + '/drinks-detail', this.getHeaders())
       .subscribe((res: any) => {
@@ -101,7 +102,7 @@ export class DrinksService {
       this.http.get(this.url + '/drinks', this.getHeaders())
       .subscribe((res: any) => {
         this.drinksToItems(res.drinks);
-        console.log(res);
+        console.log("res",res);
       });
     }
 

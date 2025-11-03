@@ -38,9 +38,12 @@ def db_drop_and_create_all():
         title='water',
         recipe='[{"name": "water", "color": "blue", "parts": 1}]'
     )
-
-
     drink.insert()
+    drink2 = Drink(
+        title= 'matcha shake',
+        recipe= '[{"name": "milk","color": "grey","parts": 1},{"name": "matcha","color": "green","parts": 3}]'
+    )
+    drink2.insert()
 # ROUTES
 
 '''
